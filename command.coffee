@@ -5,6 +5,9 @@ _        = require 'lodash'
 packageJSON = require './package.json'
 
 COMMANDS = [{
+  name: 'calendar-range'
+  help: 'Retrieve all calendar events in a range'
+}, {
   name: 'item-get'
   help: 'Retrieve an Exchange Calendar Item'
 }]
@@ -38,7 +41,7 @@ class Command
       console.log packageJSON.version
       process.exit 0
 
-    unless _.includes ['item-get'], command
+    unless _.includes ['calendar-range', 'item-get'], command
       console.error @usage parser.help({includeEnv: true})
       console.error colors.red 'Missing command or command not recognized.'
       process.exit 1
@@ -50,13 +53,11 @@ class Command
     command = new Command argv: @subArgs
     command.run()
 
-    console.log "Hi Example! #{@example}"
-
   splitArgs: (args) =>
     command = _.first _.intersection(args, _.map(COMMANDS, 'name'))
     i = _.indexOf args, command
     globalArgs = args[0..i]
-    subArgs = [(i+1)..-1]
+    subArgs = ['node', args[i..-1]...]
     return [globalArgs, subArgs]
 
   usage: (optionsStr) =>
@@ -64,9 +65,10 @@ class Command
       usage: bourse-cli [GLOBAL_OPTIONS] <COMMAND>
 
       commands:
-          item-get     Retrieve an Exchange Calendar Item
+          calendar-range Retrieve all calendar events in a range
+          item-get       Retrieve an Exchange Calendar Item
 
-      options:
+      global options:
       #{optionsStr}
     """
 
