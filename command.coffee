@@ -10,6 +10,9 @@ COMMANDS = [{
 }, {
   name: 'item-get'
   help: 'Retrieve an Exchange Calendar Item'
+}, {
+  name: 'whoami'
+  help: 'Who are you?'
 }]
 
 OPTIONS = [{
@@ -41,7 +44,7 @@ class Command
       console.log packageJSON.version
       process.exit 0
 
-    unless _.includes ['calendar-range', 'item-get'], command
+    unless _.includes ['calendar-range', 'item-get', 'whoami'], command
       console.error @usage parser.help({includeEnv: true})
       console.error colors.red 'Missing command or command not recognized.'
       process.exit 1
@@ -67,6 +70,7 @@ class Command
       commands:
           calendar-range Retrieve all calendar events in a range
           item-get       Retrieve an Exchange Calendar Item
+          whoami         Who are you?
 
       global options:
       #{optionsStr}
