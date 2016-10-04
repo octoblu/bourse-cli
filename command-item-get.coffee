@@ -56,7 +56,7 @@ class CommandItemGet
     {item_id, hostname, username, password} = options
     if _.some [item_id, hostname, username, password], _.isEmpty
       console.error @usage parser.help({includeEnv: true})
-      console.error colors.red 'Missing one of: -h, --hostname, BOURSE_HOSTNAME' if _.isEmpty hostname
+      console.error colors.red 'Missing one of: -H, --hostname, BOURSE_HOSTNAME' if _.isEmpty hostname
       console.error colors.red 'Missing one of: -i, --item-id, BOURSE_ITEM_ID'   if _.isEmpty item_id
       console.error colors.red 'Missing one of: -p, --password, BOURSE_PASSWORD' if _.isEmpty password
       console.error colors.red 'Missing one of: -u, --username, BOURSE_USERNAME' if _.isEmpty username

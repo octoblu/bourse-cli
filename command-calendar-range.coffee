@@ -63,7 +63,7 @@ class CommandCalendarRange
     if _.some [end, start, hostname, username, password], _.isEmpty
       console.error @usage parser.help({includeEnv: true})
       console.error colors.red 'Missing one of: -e, --end, BOURSE_END' if _.isEmpty end
-      console.error colors.red 'Missing one of: -h, --hostname, BOURSE_HOSTNAME' if _.isEmpty hostname
+      console.error colors.red 'Missing one of: -H, --hostname, BOURSE_HOSTNAME' if _.isEmpty hostname
       console.error colors.red 'Missing one of: -p, --password, BOURSE_PASSWORD' if _.isEmpty password
       console.error colors.red 'Missing one of: -s, --start, BOURSE_START' if _.isEmpty start
       console.error colors.red 'Missing one of: -u, --username, BOURSE_USERNAME' if _.isEmpty username
