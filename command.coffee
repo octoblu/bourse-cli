@@ -11,6 +11,9 @@ COMMANDS = [{
   name: 'item-get'
   help: 'Retrieve an Exchange Calendar Item'
 }, {
+  name: 'item-update'
+  help: 'Update an Exchange Calendar Item'
+}, {
   name: 'whoami'
   help: 'Who are you?'
 }]
@@ -44,7 +47,7 @@ class Command
       console.log packageJSON.version
       process.exit 0
 
-    unless _.includes ['calendar-range', 'item-get', 'whoami'], command
+    unless _.includes ['calendar-range', 'item-get', 'item-update', 'whoami'], command
       console.error @usage parser.help({includeEnv: true})
       console.error colors.red 'Missing command or command not recognized.'
       process.exit 1
