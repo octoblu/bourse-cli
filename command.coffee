@@ -8,6 +8,9 @@ COMMANDS = [{
   name: 'calendar-range'
   help: 'Retrieve all calendar events in a range'
 }, {
+  name: 'calendar-config-get'
+  help: 'Retrieve the user calendar configuration'
+}, {
   name: 'item-get'
   help: 'Retrieve an Exchange Calendar Item'
 }, {
@@ -47,7 +50,7 @@ class Command
       console.log packageJSON.version
       process.exit 0
 
-    unless _.includes ['calendar-range', 'item-get', 'item-update', 'whoami'], command
+    unless _.includes @_commandNames(), command
       console.error @usage parser.help({includeEnv: true})
       console.error colors.red 'Missing command or command not recognized.'
       process.exit 1
@@ -60,20 +63,24 @@ class Command
     command.run()
 
   splitArgs: (args) =>
-    command = _.first _.intersection(args, _.map(COMMANDS, 'name'))
+    command = _.first _.intersection(args, @_commandNames())
     i = _.indexOf args, command
     globalArgs = args[0..i]
     subArgs = ['node', args[i..-1]...]
     return [globalArgs, subArgs]
+
+  _commandNames: => _.map COMMANDS, 'name'
 
   usage: (optionsStr) =>
     return """
       usage: bourse-cli [GLOBAL_OPTIONS] <COMMAND>
 
       commands:
-          calendar-range Retrieve all calendar events in a range
-          item-get       Retrieve an Exchange Calendar Item
-          whoami         Who are you?
+          calendar-range       Retrieve all calendar events in a range
+          config-calendar-get  Retrieve the user configuration
+          item-get             Retrieve an Exchange Calendar Item
+          item-update          Update an Exchange Calendar Item
+          whoami               Who are you?
 
       global options:
       #{optionsStr}
