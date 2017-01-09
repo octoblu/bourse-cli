@@ -11,6 +11,9 @@ COMMANDS = [{
   name: 'calendar-config-get'
   help: 'Retrieve the user calendar configuration'
 }, {
+  name: 'calendar-config-update'
+  help: 'Update the user calendar configuration'
+}, {
   name: 'item-get'
   help: 'Retrieve an Exchange Calendar Item'
 }, {
@@ -76,11 +79,12 @@ class Command
       usage: bourse-cli [GLOBAL_OPTIONS] <COMMAND>
 
       commands:
-          calendar-range       Retrieve all calendar events in a range
-          config-calendar-get  Retrieve the user configuration
-          item-get             Retrieve an Exchange Calendar Item
-          item-update          Update an Exchange Calendar Item
-          whoami               Who are you?
+          calendar-range          Retrieve all calendar events in a range
+          config-calendar-get     Retrieve the user calendar configuration
+          config-calendar-update  Update the user calendar configuration
+          item-get                Retrieve an Exchange Calendar Item
+          item-update             Update an Exchange Calendar Item
+          whoami                  Who are you?
 
       global options:
       #{optionsStr}

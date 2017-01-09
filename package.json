@@ -1,6 +1,6 @@
 {
   "name": "bourse-cli",
-  "version": "2.3.0",
+  "version": "2.4.0",
   "description": "Put some description here",
   "keywords": [
     "cool",
@@ -22,7 +22,7 @@
     "test": "echo 'no tests' && exit 0"
   },
   "dependencies": {
-    "bourse": "^10.4.0",
+    "bourse": "^10.5.0",
     "coffee-script": "^1.12.2",
     "colors": "^1.1.2",
     "dashdash": "^1.14.1",
