@@ -75,7 +75,7 @@ class CommandCalendarRange
 
   run: =>
     bourse = new Bourse {@hostname, @username, @password}
-    bourse.getCalendarItemsInRange {@start, @end, extendedProperties: {'genisysMeetingId': true}}, (error, items) =>
+    bourse.getCalendarItemsInRange {@start, @end, extendedProperties: {'genisysMeetingId': true, 'genisysSearchableId': true}}, (error, items) =>
       return @die error if error?
       console.log JSON.stringify(items, null, 2)
       process.exit 0
