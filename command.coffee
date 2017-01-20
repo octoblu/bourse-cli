@@ -14,6 +14,9 @@ COMMANDS = [{
   name: 'calendar-config-update'
   help: 'Update the user calendar configuration'
 }, {
+  name: 'find-items-by-extended-property'
+  help: 'Find items by extended property'
+}, {
   name: 'item-get'
   help: 'Retrieve an Exchange Calendar Item'
 }, {
