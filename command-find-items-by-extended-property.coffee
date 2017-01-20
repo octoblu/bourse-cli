@@ -72,10 +72,10 @@ class CommandItemGet
 
   run: =>
     bourse = new Bourse {@hostname, @username, @password}
-    extendedProperties = [
+    extendedProperties = {
       'genisysSearchableId': true
       'genisysMeetingId': true
-    ]
+    }
     bourse.findItemsByExtendedProperty {Id: 'calendar', key: @property_name, value: @property_value, extendedProperties}, (error, items) =>
       return @die error if error?
       console.log JSON.stringify(items, null, 2)
