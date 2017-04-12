@@ -23,6 +23,9 @@ COMMANDS = [{
   name: 'item-update'
   help: 'Update an Exchange Calendar Item'
 }, {
+  name: 'item-forward'
+  help: 'Forward an Exchange Calendar Item'
+}, {
   name: 'whoami'
   help: 'Who are you?'
 }]
@@ -86,6 +89,7 @@ class Command
           config-calendar-get     Retrieve the user calendar configuration
           config-calendar-update  Update the user calendar configuration
           item-get                Retrieve an Exchange Calendar Item
+          item-forward            Forward an Exchange Calendar Item
           item-update             Update an Exchange Calendar Item
           whoami                  Who are you?
 
