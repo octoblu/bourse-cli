@@ -56,9 +56,9 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
-bourse@^10.10.4:
-  version "10.10.4"
-  resolved "https://registry.yarnpkg.com/bourse/-/bourse-10.10.4.tgz#93a3947762d451ee65987794dff1a4799c583dcd"
+bourse@^11.1.3:
+  version "11.1.3"
+  resolved "https://registry.yarnpkg.com/bourse/-/bourse-11.1.3.tgz#23158cfc76e1187fd7f71269f9b32a6bf5be4a10"
   dependencies:
     async "^2.0.1"
     cheerio "^0.22.0"
@@ -113,9 +113,9 @@ cheerio@^0.22.0:
     lodash.reject "^4.4.0"
     lodash.some "^4.4.0"
 
-coffee-script@^1.10.0, coffee-script@^1.12.5:
-  version "1.12.5"
-  resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.12.5.tgz#809f4585419112bbfe46a073ad7543af18c27346"
+coffee-script@^1.10.0, coffee-script@^1.12.6:
+  version "1.12.6"
+  resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.12.6.tgz#285a3f7115689065064d6bf9ef4572db66695cbf"
 
 colors@^1.1.2:
   version "1.1.2"
